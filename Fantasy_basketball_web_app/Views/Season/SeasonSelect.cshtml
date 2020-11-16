@@ -1,0 +1,29 @@
+﻿@model Fantasy_basketball_web_app.Models.Season
+@{
+    ViewBag.Title = "Season";
+}
+
+<div class="jumbotron">
+    <h1>Player Draft</h1>
+
+        <table style="margin-left: 25%; margin-top: 10px; border: 2px solid LightGray;">
+
+            <tr>
+
+                <th>Player Name</th>
+
+
+            </tr>
+
+            @foreach (var item in (List<Stats>)ViewData["pts"])
+            {
+
+                <tr>
+                    <td> @item.Name</td>
+
+                </tr>
+
+            }
+
+        </table>
+</div>

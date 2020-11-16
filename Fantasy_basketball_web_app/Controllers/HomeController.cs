@@ -10,6 +10,7 @@ namespace Fantasy_basketball_web_app.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -25,6 +26,14 @@ namespace Fantasy_basketball_web_app.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        
+        [HttpPost]
+        public ActionResult Index(string season)
+        {
+            TempData["season"] = this.Request.Form["Season"];
+            return RedirectToRoute("setSeason");
         }
     }
 }
